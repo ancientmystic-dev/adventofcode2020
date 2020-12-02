@@ -13,7 +13,7 @@ def part2(nums):
                     return i * j * k
 
 
-with open('day1-data.txt') as f:
+with open('input1.txt') as f:
     inputs = [
         int(line)
         for line in f

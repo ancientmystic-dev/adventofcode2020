@@ -1,23 +1,13 @@
-def part1(nums):
-    for i in nums:
-        for j in nums:
-            if i + j == 2020:
-                return i * j
+with open("input1.txt") as f:
+    l = [int(x.strip()) for x in f]
 
+for i, n1 in enumerate(l):
+    for j, n2 in enumerate(l[i+1:]):
+        if n1 + n2 == 2020:
+            part1 = n1 * n2
+        for n3 in l[i+j+1:]:
+            if n1 + n2 + n3 == 2020:
+                part2 = n1 * n2 * n3
 
-def part2(nums):
-    for i in nums:
-        for j in nums:
-            for k in nums:
-                if i + j + k == 2020:
-                    return i * j * k
-
-
-with open('input1.txt') as f:
-    inputs = [
-        int(line)
-        for line in f
-    ]
-    print(part1(inputs))
-    print(part2(inputs))
-
+print(part1)
+print(part2)
